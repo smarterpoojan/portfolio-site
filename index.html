@@ -674,6 +674,26 @@
             font-size: 1.2rem;
         }
 
+        /* email link shown in footer (full address) */
+        .contact-email {
+            display: inline-block;
+            color: #9ca3af;
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            background-color: rgba(255,255,255,0.03);
+            font-size: 0.95rem;
+            line-height: 1;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+            word-break: break-all;
+        }
+
+        .contact-email:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
         .social-link:hover {
             background-color: var(--primary-color);
             transform: translateY(-3px);
@@ -1043,10 +1063,10 @@
                     <h3>Poojan Oza</h3>
                     <p>Full Stack Developer specializing in WordPress development and custom solutions.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-                        <a href="#" class="social-link" aria-label="GitHub">gh</a>
-                        <a href="#" class="social-link" aria-label="Twitter">tw</a>
-                        <a href="#" class="social-link" aria-label="Instagram">ig</a>
+                        <!-- Keep only LinkedIn (update href to your profile if desired) -->
+                        <a href="https://www.linkedin.com/in/poojan-oza" class="social-link" aria-label="LinkedIn">in</a>
+                        <!-- Visible email address (full) -->
+                        <a href="mailto:poojanoza35@gmail.com" class="contact-email" aria-label="Email">poojanoza35@gmail.com</a>
                     </div>
                 </div>
                 <div class="footer-section">
