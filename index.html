@@ -1126,21 +1126,47 @@
             });
         });
 
-        // Contact form submission (front-end only)
+        // Contact form submission (Netlify-compatible)
+        // Issue: previous handler prevented default submission so Netlify never received data.
+        // Fix: send the form using fetch to Netlify's form endpoint (POST to "/") with
+        // application/x-www-form-urlencoded body (including form-name and honeypot).
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
 
-            // Display success message (in production, you'd send this to a backend)
-            alert(`Thank you, ${name}! Your message has been received. I'll get back to you at ${email} soon.`);
-            
-            // Reset form
-            contactForm.reset();
+            // Build FormData and URL-encoded body
+            const formData = new FormData(contactForm);
+
+            // If honeypot filled, abort silently
+            if (formData.get('bot-field')) {
+                // spam detected
+                return;
+            }
+
+            const body = new URLSearchParams();
+            for (const pair of formData.entries()) {
+                body.append(pair[0], pair[1]);
+            }
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: body.toString()
+            })
+            .then(response => {
+                if (response.ok) {
+                    const name = formData.get('name') || '';
+                    const email = formData.get('email') || '';
+                    alert(`Thank you, ${name}! Your message has been received. I'll get back to you at ${email} soon.`);
+                    contactForm.reset();
+                } else {
+                    return response.text().then(text => { throw new Error(text || 'Form submission failed'); });
+                }
+            })
+            .catch(err => {
+                console.error('Form submit error:', err);
+                alert('Sorry — there was an error sending your message. Please try again or email me directly.');
+            });
         });
 
         // Add animation on scroll (simple fade-in effect)
