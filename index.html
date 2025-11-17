@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Portfolio - Full Stack Developer & Designer">
-    <title>Your Name - Portfolio</title>
+    <meta name="description" content="Professional Portfolio - Full Stack Developer & WordPress Developer">
+    <title>Poojan Oza - Portfolio</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -245,6 +245,14 @@
             color: white;
             font-size: 6rem;
             box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .hero-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* ========== ABOUT SECTION ========== */
@@ -265,15 +273,17 @@
         }
 
         .profile-image {
+            /* wrapper for profile image */
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-image .profile-img {
             width: 300px;
             height: 300px;
             border-radius: 16px;
-            background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--primary-color);
+            object-fit: cover;
+            display: block;
             box-shadow: var(--shadow-md);
         }
 
@@ -810,7 +820,7 @@
     <!-- ========== NAVIGATION BAR ========== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">YourName</a>
+            <a href="#" class="nav-logo">Poojan Oza</a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -833,16 +843,16 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
-                    <h2>Full Stack Developer & UI/UX Designer</h2>
-                    <p>I create beautiful, functional websites and applications that help businesses grow. Specializing in WordPress development, Figma design, and custom plugin creation.</p>
+                    <h1>Hi, I'm <span class="highlight">Poojan Oza</span></h1>
+                    <h2>Full Stack & WordPress Developer</h2>
+                    <p>I build functional, maintainable websites and plugins that help businesses grow. Specializing in WordPress development, frontend engineering, and Figma plugin tooling.</p>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary">Hire Me</a>
                         <a href="#services" class="btn btn-secondary">View Services</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="hero-image-placeholder">👨‍💻</div>
+                    <img src="assets/images/hero.jpg" alt="Hero illustration" class="hero-image-placeholder">
                 </div>
             </div>
         </div>
@@ -855,22 +865,31 @@
             <p class="section-subtitle">Get to know me better</p>
             <div class="about-content">
                 <div class="about-image">
-                    <div class="profile-image">📸</div>
+                    <div class="profile-image">
+                        <img src="assets/images/profile.jpg" alt="Poojan Oza" class="profile-img">
+                    </div>
                 </div>
                 <div class="about-text">
-                    <h3>Professional Developer & Designer</h3>
-                    <p>With over 5 years of experience in web development and design, I've helped dozens of businesses establish their online presence. My passion lies in creating seamless user experiences and robust, scalable solutions.</p>
-                    <p>I specialize in WordPress development, custom plugin creation, and transforming Figma designs into pixel-perfect websites. My goal is to deliver high-quality work that exceeds expectations.</p>
-                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">My Skills</h3>
+                    <p>Hi, I'm <strong>Poojan Oza</strong>, a passionate WordPress Developer, Frontend Developer, and Figma Plugin Developer. I create clean, fast, and user-friendly websites and plugins. I focus on delivering high-performance solutions that help businesses grow online.</p>
+
+                    <ul>
+                        <li>2+ years of experience in WordPress development</li>
+                        <li>Built multiple custom themes & plugins</li>
+                        <li>Experienced in Vue.js, Tailwind CSS, JavaScript, TypeScript</li>
+                        <li>Worked on Figma → WordPress conversion projects</li>
+                        <li>Built custom tools, automation, & real-world projects</li>
+                    </ul>
+
+                    <h3 style="margin-top: 1.25rem;">My Skills</h3>
                     <div class="skills-grid">
                         <div class="skill-item">WordPress</div>
                         <div class="skill-item">PHP</div>
                         <div class="skill-item">JavaScript</div>
-                        <div class="skill-item">React</div>
-                        <div class="skill-item">HTML/CSS</div>
-                        <div class="skill-item">Figma</div>
-                        <div class="skill-item">UI/UX Design</div>
-                        <div class="skill-item">MySQL</div>
+                        <div class="skill-item">TypeScript</div>
+                        <div class="skill-item">Vue.js</div>
+                        <div class="skill-item">Tailwind CSS</div>
+                        <div class="skill-item">Figma Plugin Dev</div>
+                        <div class="skill-item">API</div>
                     </div>
                 </div>
             </div>
@@ -886,28 +905,20 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2021 - Present</div>
-                        <h3>Senior WordPress Developer</h3>
-                        <h4>Tech Solutions Inc.</h4>
-                        <p>Leading WordPress development projects, creating custom themes and plugins, and mentoring junior developers. Successfully delivered 50+ projects for clients worldwide.</p>
+                        <div class="timeline-date">2024 - Present</div>
+                        <h3>Software Developer</h3>
+                        <h4>RexOrBit</h4>
+                        <p>Working on Figma → WordPress conversion tooling for the UIChemy plugin and related product improvements, focusing on plugin stability, conversion workflows, and performance.</p>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2019 - 2021</div>
-                        <h3>Full Stack Developer</h3>
-                        <h4>Digital Innovations Ltd.</h4>
-                        <p>Developed responsive web applications using modern frameworks. Specialized in WordPress customization and API integrations. Worked closely with design teams to implement pixel-perfect designs.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2018 - 2019</div>
-                        <h3>Junior Web Developer</h3>
-                        <h4>Creative Web Agency</h4>
-                        <p>Started my professional journey building websites and learning best practices in web development. Gained experience in WordPress, HTML, CSS, JavaScript, and client communication.</p>
+                        <div class="timeline-date">2023 - 2024</div>
+                        <h3>Software Developer</h3>
+                        <h4>Posimyth Innovation</h4>
+                        <p>Contributed to development of the UIChemy Figma-to-WordPress conversion plugin — worked on plugin architecture, conversion engine integration, and testing workflows.</p>
                     </div>
                 </div>
             </div>
@@ -921,22 +932,16 @@
             <p class="section-subtitle">Academic background</p>
             <div class="education-grid">
                 <div class="education-card">
-                    <div class="year">2014 - 2018</div>
-                    <h3>Bachelor of Computer Science</h3>
-                    <h4>University Name</h4>
-                    <p>Graduated with honors. Focused on software engineering, web technologies, and database management systems.</p>
+                    <div class="year">2021 - 2024</div>
+                    <h3>B.Sc.</h3>
+                    <h4>KS School of Business Management, Gujarat University</h4>
+                    <p>Completed Bachelor of Science (2021-2024). Focused on computing fundamentals and practical software development projects.</p>
                 </div>
                 <div class="education-card">
-                    <div class="year">2020</div>
-                    <h3>WordPress Certification</h3>
-                    <h4>Online Learning Platform</h4>
-                    <p>Advanced certification in WordPress development, plugin architecture, and theme customization.</p>
-                </div>
-                <div class="education-card">
-                    <div class="year">2021</div>
-                    <h3>UI/UX Design Bootcamp</h3>
-                    <h4>Design Academy</h4>
-                    <p>Comprehensive training in user interface design, user experience principles, and Figma mastery.</p>
+                    <div class="year">2024 - Present</div>
+                    <h3>MSc. IT (Pursuing)</h3>
+                    <h4>Gujarat, India</h4>
+                    <p>Currently pursuing a Master of Science in Information Technology to deepen knowledge in advanced software engineering topics.</p>
                 </div>
             </div>
         </div>
@@ -980,45 +985,24 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Working with this developer was an absolute pleasure. They delivered our WordPress site ahead of schedule and the quality exceeded our expectations. Highly recommended!</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JD</div>
-                        <div class="author-info">
-                            <h4>John Doe</h4>
-                            <p>CEO, Tech Startup Inc.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonial-text">The custom WordPress plugin they developed for us has transformed our workflow. Professional, communicative, and extremely skilled. Will definitely work together again.</p>
+                    <p class="testimonial-text">Poojan delivered an amazing WordPress site. Very responsive and professional!</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SM</div>
                         <div class="author-info">
-                            <h4>Sarah Miller</h4>
-                            <p>Marketing Director, Digital Agency</p>
+                            <h4>Sarah</h4>
+                            <!-- <p>Marketing Director, Digital Agency</p> -->
                         </div>
                     </div>
+                    
                 </div>
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Outstanding work on our Figma to WordPress conversion. Every detail was perfect and the site performs beautifully. A true professional who cares about quality.</p>
+                    <p class="testimonial-text">Best Figma to WP conversion ever! Pixel perfect and fast</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">RJ</div>
+                        <div class="author-avatar">RP</div>
                         <div class="author-info">
-                            <h4>Robert Johnson</h4>
-                            <p>Founder, E-commerce Store</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Incredible expertise in both development and design. They understood our vision and brought it to life perfectly. Responsive, reliable, and results-driven.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">EW</div>
-                        <div class="author-info">
-                            <h4>Emily Watson</h4>
-                            <p>Product Manager, SaaS Company</p>
+                            <h4>Raj Patel</h4>
+                            <!-- <p>Founder, E-commerce Store</p> -->
                         </div>
                     </div>
                 </div>
@@ -1062,8 +1046,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>YourName</h3>
-                    <p>Full Stack Developer & UI/UX Designer specializing in WordPress development and custom solutions.</p>
+                    <h3>Poojan Oza</h3>
+                    <p>Full Stack Developer specializing in WordPress development and custom solutions.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="LinkedIn">in</a>
                         <a href="#" class="social-link" aria-label="GitHub">gh</a>
@@ -1091,7 +1075,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 YourName. All rights reserved. Built with ❤️</p>
+                <p>&copy; 2025 Poojan Oza. All rights reserved. Built with ❤️</p>
             </div>
         </div>
     </footer>
