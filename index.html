@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Portfolio - Full Stack Developer & WordPress Developer">
-    <title>Poojan Oza - Portfolio</title>
-    
+    <meta name="description" content="Poojan Oza — WordPress Developer, Software Developer & MCP Builder based in Ahmedabad. 2+ years of experience in custom WordPress, Figma plugins, and AI-powered MCP tooling.">
+    <title>Poojan Oza — WordPress Developer & MCP Builder</title>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
         /* ========== CSS RESET & BASE STYLES ========== */
         * {
@@ -20,16 +20,21 @@
         }
 
         :root {
-            --primary-color: #3b82f6;
-            --primary-dark: #2563eb;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --accent-color: #8b5cf6;
+            --text-dark: #0f172a;
+            --text-mid: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-soft: #f1f5f9;
             --bg-white: #ffffff;
-            --border-color: #e5e7eb;
+            --border-color: #e2e8f0;
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.12);
+            --shadow-xl: 0 20px 40px -10px rgba(15, 23, 42, 0.15);
+            --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
         }
 
         body {
@@ -39,25 +44,25 @@
             background-color: var(--bg-white);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         /* ========== NAVIGATION BAR ========== */
         .navbar {
-            background-color: var(--bg-white);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             box-shadow: var(--shadow-sm);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
         }
-
         .navbar.scrolled {
             box-shadow: var(--shadow-md);
+            border-bottom-color: var(--border-color);
         }
-
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -66,41 +71,36 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .nav-logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none;
+            letter-spacing: -0.02em;
         }
-
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 2rem;
             align-items: center;
         }
-
         .nav-link {
-            color: var(--text-dark);
+            color: var(--text-mid);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
             font-size: 0.95rem;
         }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-
-        /* Mobile Menu Toggle Button */
+        .nav-link:hover { color: var(--primary-color); }
         .nav-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 4px;
         }
-
         .nav-toggle span {
             width: 25px;
             height: 3px;
@@ -108,18 +108,9 @@
             transition: all 0.3s ease;
             border-radius: 3px;
         }
-
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
 
         /* ========== CONTAINER & SECTION STYLES ========== */
         .container {
@@ -127,24 +118,20 @@
             margin: 0 auto;
             padding: 0 2rem;
         }
-
-        section {
-            padding: 5rem 0;
-        }
-
+        section { padding: 5rem 0; }
         .section-title {
             font-size: 2.5rem;
-            font-weight: 700;
+            font-weight: 800;
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             color: var(--text-dark);
+            letter-spacing: -0.03em;
         }
-
         .section-subtitle {
             text-align: center;
             color: var(--text-light);
             margin-bottom: 3rem;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         /* ========== HERO SECTION ========== */
@@ -152,186 +139,241 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background:
+                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+                linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
             margin-top: 70px;
+            position: relative;
+            overflow: hidden;
         }
-
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 4rem;
             align-items: center;
         }
-
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
         .hero-text h1 {
             font-size: 3.5rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
         }
-
         .hero-text .highlight {
-            color: var(--primary-color);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-
         .hero-text h2 {
-            font-size: 1.5rem;
-            color: var(--text-light);
-            font-weight: 400;
+            font-size: 1.4rem;
+            color: var(--text-mid);
+            font-weight: 500;
             margin-bottom: 1.5rem;
         }
-
         .hero-text p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-light);
             margin-bottom: 2rem;
             line-height: 1.8;
+            max-width: 540px;
         }
-
         .hero-buttons {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
         }
-
         .btn {
-            padding: 0.875rem 2rem;
-            border-radius: 8px;
+            padding: 0.875rem 1.75rem;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
-
         .btn-primary {
-            background-color: var(--primary-color);
+            background: var(--gradient);
             color: white;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
         }
-
         .btn-primary:hover {
-            background-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.45);
         }
-
         .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            border: 1.5px solid var(--border-color);
         }
-
         .btn-secondary:hover {
-            background-color: var(--primary-color);
-            color: white;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
         }
-
         .hero-image {
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
-
         .hero-image-placeholder {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, #8b5cf6 100%);
-            border-radius: 50%;
+            width: 380px;
+            height: 380px;
+            background: var(--gradient);
+            border-radius: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 6rem;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             overflow: hidden;
+            transform: rotate(-3deg);
+            transition: transform 0.4s ease;
         }
-
+        .hero-image-placeholder:hover { transform: rotate(0deg); }
         .hero-image-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
-
-        /* ========== ABOUT SECTION ========== */
-        .about {
-            background-color: var(--bg-white);
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .floating-card.fc-1 {
+            top: 8%;
+            right: -10px;
+            animation: float 4s ease-in-out infinite;
+        }
+        .floating-card.fc-2 {
+            bottom: 12%;
+            left: -10px;
+            animation: float 4s ease-in-out infinite 2s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
+        /* ========== ABOUT SECTION ========== */
+        .about { background-color: var(--bg-white); }
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 4rem;
-            align-items: center;
+            align-items: start;
         }
-
         .about-image {
             display: flex;
             justify-content: center;
+            position: sticky;
+            top: 100px;
         }
-
         .profile-image {
-            /* wrapper for profile image */
             display: flex;
             justify-content: center;
+            position: relative;
         }
-
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            inset: -12px;
+            background: var(--gradient);
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0.4;
+            filter: blur(20px);
+        }
         .profile-image .profile-img {
             width: 300px;
             height: 300px;
-            border-radius: 16px;
+            border-radius: 20px;
             object-fit: cover;
             display: block;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .about-text p {
-            color: var(--text-light);
-            margin-bottom: 2rem;
+        .about-text > p {
+            color: var(--text-mid);
+            margin-bottom: 1.25rem;
             line-height: 1.8;
+            font-size: 1.02rem;
         }
-
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.75rem;
         }
-
         .skill-item {
-            background-color: var(--bg-light);
-            padding: 1rem;
-            border-radius: 8px;
+            background-color: var(--bg-soft);
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
             text-align: center;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
         }
-
         .skill-item:hover {
-            background-color: var(--primary-color);
+            background: var(--gradient);
             color: white;
-            transform: translateY(-5px);
+            border-color: transparent;
+            transform: translateY(-3px);
             box-shadow: var(--shadow-md);
         }
 
         /* ========== EXPERIENCE SECTION ========== */
-        .experience {
-            background-color: var(--bg-light);
-        }
-
+        .experience { background-color: var(--bg-light); }
         .timeline {
             position: relative;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
         }
-
         .timeline::before {
             content: '';
             position: absolute;
@@ -339,500 +381,500 @@
             transform: translateX(-50%);
             width: 2px;
             height: 100%;
-            background-color: var(--primary-color);
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
         }
-
         .timeline-item {
             margin-bottom: 3rem;
             position: relative;
         }
-
         .timeline-content {
             background-color: var(--bg-white);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 16px;
             box-shadow: var(--shadow-md);
-            width: calc(50% - 2rem);
+            width: calc(50% - 2.5rem);
             position: relative;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
         }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: auto;
+        .timeline-content:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
         }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: auto;
-        }
-
+        .timeline-item:nth-child(odd) .timeline-content { margin-left: auto; }
+        .timeline-item:nth-child(even) .timeline-content { margin-right: auto; }
         .timeline-dot {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 16px;
-            height: 16px;
-            background-color: var(--primary-color);
+            width: 18px;
+            height: 18px;
+            background: var(--gradient);
             border-radius: 50%;
             border: 4px solid var(--bg-light);
             top: 2rem;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
         }
-
         .timeline-date {
             color: var(--primary-color);
             font-weight: 600;
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
         }
-
         .timeline-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+            font-weight: 700;
         }
-
         .timeline-content h4 {
             color: var(--text-light);
             font-weight: 500;
             margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .timeline-content p {
+            color: var(--text-mid);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0;
+        }
+        .timeline-content ul li {
+            color: var(--text-mid);
+            line-height: 1.6;
+            font-size: 0.92rem;
+            padding-left: 1.25rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content ul li::before {
+            content: '▸';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 700;
         }
 
-        .timeline-content p {
-            color: var(--text-light);
-            line-height: 1.8;
+        /* ========== PROJECTS SECTION ========== */
+        .projects { background-color: var(--bg-white); }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .project-card:hover::before { transform: scaleX(1); }
+        .project-tag {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+        .project-card p {
+            color: var(--text-mid);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+        .project-tech span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            background: var(--bg-soft);
+            color: var(--text-mid);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
         }
 
         /* ========== EDUCATION SECTION ========== */
-        .education {
-            background-color: var(--bg-white);
-        }
-
+        .education { background-color: var(--bg-light); }
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
             margin: 0 auto;
         }
-
         .education-card {
-            background-color: var(--bg-light);
-            padding: 2rem;
-            border-radius: 12px;
+            background-color: var(--bg-white);
+            padding: 1.75rem;
+            border-radius: 14px;
             transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
             border-left: 4px solid var(--primary-color);
         }
-
         .education-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
-
         .education-card .year {
             color: var(--primary-color);
             font-weight: 600;
             margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
         }
-
         .education-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+            font-weight: 700;
         }
-
         .education-card h4 {
-            color: var(--text-light);
+            color: var(--text-mid);
             font-weight: 500;
             margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
-
         .education-card p {
             color: var(--text-light);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* ========== SERVICES SECTION ========== */
-        .services {
-            background-color: var(--bg-light);
-        }
-
+        .services { background-color: var(--bg-white); }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
         }
-
         .service-card {
             background-color: var(--bg-white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            text-align: center;
+            padding: 2rem;
+            border-radius: 16px;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
         }
-
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
         }
-
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--text-dark);
+            display: inline-block;
         }
-
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
         .service-card p {
-            color: var(--text-light);
-            line-height: 1.8;
+            color: var(--text-mid);
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         /* ========== TESTIMONIALS SECTION ========== */
-        .testimonials {
-            background-color: var(--bg-white);
-        }
-
+        .testimonials { background-color: var(--bg-light); }
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-
         .testimonial-card {
-            background-color: var(--bg-light);
+            background-color: var(--bg-white);
             padding: 2rem;
-            border-radius: 12px;
-            position: relative;
+            border-radius: 16px;
             box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            position: relative;
             transition: all 0.3s ease;
         }
-
         .testimonial-card:hover {
             box-shadow: var(--shadow-md);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
-
         .quote-icon {
             font-size: 3rem;
             color: var(--primary-color);
-            opacity: 0.3;
+            opacity: 0.2;
             line-height: 1;
-            margin-bottom: 1rem;
+            font-family: Georgia, serif;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
         }
-
         .testimonial-text {
-            color: var(--text-light);
+            color: var(--text-mid);
+            line-height: 1.7;
             margin-bottom: 1.5rem;
-            line-height: 1.8;
             font-style: italic;
+            position: relative;
+            z-index: 1;
         }
-
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
         }
-
         .author-avatar {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color) 0%, #8b5cf6 100%);
+            background: var(--gradient);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
+            font-weight: 700;
+            font-size: 0.95rem;
         }
-
         .author-info h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .author-info p {
-            font-size: 0.875rem;
-            color: var(--text-light);
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-dark);
         }
 
         /* ========== CONTACT SECTION ========== */
-        .contact {
-            background-color: var(--bg-light);
-        }
-
+        .contact { background-color: var(--bg-white); }
         .contact-container {
             max-width: 600px;
             margin: 0 auto;
         }
-
         .contact-form {
-            background-color: var(--bg-white);
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
+            background-color: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
         }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
+        .form-group { margin-bottom: 1.25rem; }
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
             color: var(--text-dark);
+            font-size: 0.9rem;
         }
-
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.875rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            padding: 0.85rem 1rem;
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
             transition: all 0.3s ease;
+            background-color: white;
         }
-
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
         }
-
         .form-group textarea {
+            min-height: 130px;
             resize: vertical;
-            min-height: 150px;
-        }
-
-        .form-group button {
-            width: 100%;
-            font-size: 1.1rem;
         }
 
         /* ========== FOOTER ========== */
         .footer {
-            background-color: var(--text-dark);
+            background-color: #0f172a;
             color: white;
-            padding: 3rem 0 1.5rem;
+            padding: 3.5rem 0 1.5rem;
         }
-
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 3rem;
             margin-bottom: 2rem;
         }
-
         .footer-section h3 {
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
+            font-weight: 700;
         }
-
         .footer-section p {
-            color: #9ca3af;
-            line-height: 1.8;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
-
         .footer-links {
             list-style: none;
+            padding: 0;
         }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
+        .footer-links li { margin-bottom: 0.5rem; }
         .footer-links a {
-            color: #9ca3af;
+            color: #94a3b8;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 0.95rem;
         }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-
+        .footer-links a:hover { color: var(--primary-color); }
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
         }
-
         .social-link {
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: white;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
         }
-
-        /* email link shown in footer (full address) */
-        .contact-email {
-            display: inline-block;
-            color: #9ca3af;
-            text-decoration: none;
-            padding: 0.5rem 0.75rem;
-            border-radius: 8px;
-            background-color: rgba(255,255,255,0.03);
-            font-size: 0.95rem;
-            line-height: 1;
-            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-            word-break: break-all;
-        }
-
-        .contact-email:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-
         .social-link:hover {
-            background-color: var(--primary-color);
+            background: var(--gradient);
             transform: translateY(-3px);
         }
-
+        .contact-email {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.5rem 0.85rem;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .contact-email:hover {
+            background-color: rgba(99, 102, 241, 0.2);
+            color: white;
+        }
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
-            color: #9ca3af;
+            color: #94a3b8;
+            font-size: 0.9rem;
         }
 
-        /* ========== RESPONSIVE DESIGN ========== */
-        @media (max-width: 768px) {
-            /* Mobile Navigation */
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: var(--bg-white);
-                width: 100%;
-                text-align: center;
-                transition: left 0.3s ease;
-                box-shadow: var(--shadow-lg);
-                padding: 2rem 0;
-                gap: 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-menu li {
-                padding: 1rem 0;
-                border-bottom: 1px solid var(--border-color);
-                width: 100%;
-            }
-
-            .nav-menu li:last-child {
-                border-bottom: none;
-            }
-
-            /* Hero Section */
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-image-placeholder {
-                width: 300px;
-                height: 300px;
-                font-size: 4rem;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            /* About Section */
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 968px) {
+            .hero-content,
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 3rem;
                 text-align: center;
             }
-
-            .profile-image {
-                width: 250px;
-                height: 250px;
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
             }
+            .hero-buttons { justify-content: center; }
+            .about-image { position: static; }
+        }
 
-            /* Timeline */
-            .timeline::before {
-                left: 0;
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                box-shadow: var(--shadow-md);
             }
-
+            .nav-menu.active { left: 0; }
+            .nav-toggle { display: flex; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-image-placeholder {
+                width: 280px;
+                height: 280px;
+                font-size: 4rem;
+            }
+            .floating-card { display: none; }
+            .timeline::before { left: 0; }
             .timeline-content {
                 width: calc(100% - 3rem);
                 margin-left: 3rem !important;
             }
-
-            .timeline-dot {
-                left: 0;
-            }
-
-            /* General */
-            .section-title {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 3rem 0;
-            }
-
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            .contact-form {
-                padding: 2rem;
-            }
-
+            .timeline-dot { left: 0; }
+            .section-title { font-size: 2rem; }
+            section { padding: 3.5rem 0; }
+            .container { padding: 0 1.5rem; }
+            .contact-form { padding: 1.75rem; }
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
                 text-align: center;
             }
-
-            .social-links {
-                justify-content: center;
-            }
+            .social-links { justify-content: center; }
         }
 
         @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
+            .hero-text h1 { font-size: 2rem; }
             .hero-image-placeholder {
-                width: 250px;
-                height: 250px;
+                width: 240px;
+                height: 240px;
                 font-size: 3rem;
             }
-
             .btn {
                 width: 100%;
-                text-align: center;
+                justify-content: center;
             }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -845,15 +887,13 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
@@ -863,16 +903,24 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        Available for new projects
+                    </div>
                     <h1>Hi, I'm <span class="highlight">Poojan Oza</span></h1>
-                    <h2>Full Stack & WordPress Developer</h2>
-                    <p>I build functional, maintainable websites and plugins that help businesses grow. Specializing in WordPress development, frontend engineering, and Figma plugin tooling.</p>
+                    <h2>WordPress Developer · Software Developer · MCP Builder</h2>
+                    <p>I build functional, maintainable WordPress sites and custom developer tools — including MCP servers that connect AI assistants to Figma and WordPress workflows for design-to-code automation and SEO-friendly site management.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Hire Me</a>
-                        <a href="#services" class="btn btn-secondary">View Services</a>
+                        <a href="#contact" class="btn btn-primary">Hire Me →</a>
+                        <a href="#projects" class="btn btn-secondary">View Projects</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="assets/images/heros.jpg" alt="Hero illustration" class="hero-image-placeholder">
+                    <div class="hero-image-placeholder">
+                        <img src="assets/images/heros.jpg" alt="Poojan Oza" onerror="this.style.display='none'; this.parentElement.innerHTML='👨‍💻';">
+                    </div>
+                    <div class="floating-card fc-1">⚡ 2+ Years Exp</div>
+                    <div class="floating-card fc-2">🚀 MCP Builder</div>
                 </div>
             </div>
         </div>
@@ -886,24 +934,27 @@
             <div class="about-content">
                 <div class="about-image">
                     <div class="profile-image">
-                        <img src="assets/images/profile.jpg" alt="Poojan Oza" class="profile-img">
+                        <img src="assets/images/profile.jpg" alt="Poojan Oza" class="profile-img" onerror="this.src='https://via.placeholder.com/300x300/6366f1/ffffff?text=PO';">
                     </div>
                 </div>
                 <div class="about-text">
-                    <p>Hi, I'm <strong>Poojan Oza</strong>, — a passionate WordPress Developer, Frontend Developer, and Figma Plugin Developer with 2+ years of experience. I build clean, fast, and user-friendly websites and plugins. My focus is on delivering high-performance, scalable solutions that help businesses grow online.</p>
+                    <p>Hi, I'm <strong>Poojan Oza</strong> — a WordPress Developer, Software Developer, and MCP Builder with 2+ years of experience building production-grade websites, Figma plugins, and AI-powered developer tools.</p>
+                    <p>I currently work at <strong>RexOrBit</strong> on UIChemy (Figma → WordPress conversion), where I also build custom <strong>MCP (Model Context Protocol) servers</strong> that let AI assistants directly manage Figma designs and run SEO-friendly site analysis & updates on live WordPress sites.</p>
 
-                    <h3 style="margin-top: 1.25rem;">My Skills</h3>
+                    <h3>My Skills</h3>
                     <div class="skills-grid">
                         <div class="skill-item">WordPress</div>
                         <div class="skill-item">PHP</div>
                         <div class="skill-item">JavaScript</div>
                         <div class="skill-item">TypeScript</div>
                         <div class="skill-item">Vue.js</div>
+                        <div class="skill-item">Node.js</div>
                         <div class="skill-item">Tailwind CSS</div>
-                        <div class="skill-item">Figma Plugin Dev</div>
-                        <div class="skill-item">API</div>
+                        <div class="skill-item">Figma Plugins</div>
+                        <div class="skill-item">MCP Servers</div>
+                        <div class="skill-item">REST APIs</div>
                         <div class="skill-item">Automation</div>
-                        <div class="skill-item">custom tools</div>
+                        <div class="skill-item">SEO</div>
                     </div>
                 </div>
             </div>
@@ -919,20 +970,86 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2024 - Present</div>
-                        <h3>Software Developer</h3>
+                        <div class="timeline-date">Jun 2024 — Present</div>
+                        <h3>WordPress Developer, Software Developer</h3>
                         <h4>RexOrBit</h4>
-                        <p>Working on Figma → WordPress conversion tooling for the UIChemy plugin and related product improvements, focusing on plugin stability, conversion workflows, and performance.</p>
+                        <p>Continued working on UIChemy and related products after the team moved from Posimyth Innovation to RexOrBit through a partnership.</p>
+                        <ul>
+                            <li>Developed custom WordPress themes from scratch using PHP, HTML, CSS, and JavaScript.</li>
+                            <li>Used WordPress hooks and filters to modify core functionality; built custom plugins to extend site features.</li>
+                            <li>Customized WooCommerce by overriding templates.</li>
+                            <li>Integrated MCP servers to manage Figma designs and WordPress workflows directly through AI assistants.</li>
+                            <li>Built a custom WordPress MCP server for site analysis, content audits, and SEO-friendly automated updates (meta tags, schema, on-page optimization).</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-date">Jun 2023 — Jun 2024</div>
                         <h3>Software Developer</h3>
                         <h4>Posimyth Innovation</h4>
-                        <p>Contributed to development of the UIChemy Figma-to-WordPress conversion plugin — worked on plugin architecture, conversion engine integration, and testing workflows.</p>
+                        <p>Worked on UIChemy, a Figma plugin that converts UI designs into responsive WordPress layouts. Supported Elementor, Bricks, and Gutenberg builders.</p>
+                        <ul>
+                            <li>Built batch import of multiple pages, live import from Figma, and global style sync across pages.</li>
+                            <li>Handled plugin updates and bug fixes.</li>
+                            <li>Developed Sprout UI — a Figma plugin to instantly import and manage high-quality UI templates inside Figma.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Key Projects</h2>
+            <p class="section-subtitle">Things I've built</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-tag">MCP · AI Tooling</span>
+                    <h3>WordPress MCP Server</h3>
+                    <p>A custom Model Context Protocol server that enables AI assistants to analyze WordPress sites, identify SEO issues, and apply on-page optimizations and content updates automatically — content audits, schema markup, meta optimization, and direct site updates via natural language.</p>
+                    <div class="project-tech">
+                        <span>MCP</span>
+                        <span>Node.js</span>
+                        <span>TypeScript</span>
+                        <span>WordPress REST API</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-tag">MCP · Design Workflow</span>
+                    <h3>Figma + WordPress MCP Integration</h3>
+                    <p>Integrated MCP servers at RexOrBit to manage Figma designs and WordPress workflows directly from AI assistants — automating design-to-code conversion, content updates, and routine maintenance tasks.</p>
+                    <div class="project-tech">
+                        <span>MCP</span>
+                        <span>Figma API</span>
+                        <span>WordPress</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-tag">Figma Plugin · Flagship</span>
+                    <h3>UIChemy — Figma to WordPress</h3>
+                    <p>Figma plugin converting UI designs into production-ready WordPress layouts across Elementor, Bricks, and Gutenberg. Features include batch import of multiple pages, live import from Figma, and global style sync across pages.</p>
+                    <div class="project-tech">
+                        <span>Figma API</span>
+                        <span>TypeScript</span>
+                        <span>Vue.js</span>
+                        <span>PHP</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-tag">Figma Plugin</span>
+                    <h3>Sprout UI</h3>
+                    <p>A Figma plugin to streamline design workflow by allowing users to instantly import and manage high-quality UI templates directly within Figma.</p>
+                    <div class="project-tech">
+                        <span>Figma API</span>
+                        <span>TypeScript</span>
                     </div>
                 </div>
             </div>
@@ -946,16 +1063,28 @@
             <p class="section-subtitle">Academic background</p>
             <div class="education-grid">
                 <div class="education-card">
-                    <div class="year">2021 - 2024</div>
-                    <h3>B.Sc.</h3>
-                    <h4>KS School of Business Management, Gujarat University</h4>
-                    <p>Completed Bachelor of Science (2021-2024). Focused on computing fundamentals and practical software development projects.</p>
+                    <div class="year">Apr 2024 — Apr 2026</div>
+                    <h3>MSc IT</h3>
+                    <h4>Gujarat University</h4>
+                    <p>Master of Science in Information Technology — currently pursuing.</p>
                 </div>
                 <div class="education-card">
-                    <div class="year">2024 - Present</div>
-                    <h3>MSc. IT (Pursuing)</h3>
-                    <h4>Gujarat, India</h4>
-                    <p>Currently pursuing a Master of Science in Information Technology to deepen knowledge in advanced software engineering topics.</p>
+                    <div class="year">2021 — Apr 2024</div>
+                    <h3>BSc IT</h3>
+                    <h4>Gujarat University</h4>
+                    <p>Bachelor of Science in Information Technology. GPA: 3.68</p>
+                </div>
+                <div class="education-card">
+                    <div class="year">May 2021</div>
+                    <h3>HSC</h3>
+                    <h4>Gujarat Board</h4>
+                    <p>Higher Secondary Certificate — 82%</p>
+                </div>
+                <div class="education-card">
+                    <div class="year">May 2019</div>
+                    <h3>SSC</h3>
+                    <h4>Gujarat Board</h4>
+                    <p>Secondary School Certificate — 72%</p>
                 </div>
             </div>
         </div>
@@ -970,28 +1099,33 @@
                 <div class="service-card">
                     <div class="service-icon">🌐</div>
                     <h3>WordPress Site Development</h3>
-                    <p>Custom WordPress websites tailored to your business needs. Fast, secure, and SEO-optimized solutions that drive results.</p>
+                    <p>Custom WordPress websites tailored to your business — fast, secure, and SEO-optimized solutions that drive results.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔌</div>
                     <h3>WordPress Plugin Development</h3>
-                    <p>Custom plugins built from scratch to add unique functionality to your WordPress site. Clean code, well-documented, and easy to maintain.</p>
+                    <p>Custom plugins built from scratch to add unique functionality. Clean code, well-documented, and easy to maintain.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎨</div>
                     <h3>Figma to WordPress Conversion</h3>
-                    <p>Pixel-perfect conversion of your Figma designs into fully functional WordPress websites. Responsive and cross-browser compatible.</p>
+                    <p>Pixel-perfect conversion of your Figma designs into fully functional, responsive, cross-browser WordPress sites.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🛠️</div>
                     <h3>Figma Plugin Development</h3>
-                    <p>Custom Figma plugins to streamline your design workflow. Automate repetitive tasks and enhance your design process with powerful tools.</p>
+                    <p>Custom Figma plugins to streamline your design workflow. Automate repetitive tasks and enhance your design process.</p>
                 </div>
-                    <div class="service-card">
-                        <div class="service-icon">🤖</div>
-                        <h3>Automation & AI Agent Creation</h3>
-                        <p>Design and build automation solutions and AI agents to streamline workflows — custom scripts, bot integrations, and intelligent agents using APIs and modern ML tools to save time and increase productivity.</p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>MCP Server Development</h3>
+                    <p>Custom Model Context Protocol servers that connect AI assistants to your tools — Figma, WordPress, internal APIs, or anything else.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Automation & AI Agents</h3>
+                    <p>Design and build automation solutions and AI agents to streamline workflows — custom scripts, bot integrations, and intelligent agents using APIs and modern ML tools.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1007,22 +1141,15 @@
                     <p class="testimonial-text">Poojan delivered an amazing WordPress site. Very responsive and professional!</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SM</div>
-                        <div class="author-info">
-                            <h4>Sarah</h4>
-                            <!-- <p>Marketing Director, Digital Agency</p> -->
-                        </div>
+                        <div class="author-info"><h4>Sarah</h4></div>
                     </div>
-                    
                 </div>
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Best Figma to WP conversion ever! Pixel perfect and fast</p>
+                    <p class="testimonial-text">Best Figma to WP conversion ever! Pixel perfect and fast.</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">RP</div>
-                        <div class="author-info">
-                            <h4>Raj Patel</h4>
-                            <!-- <p>Founder, E-commerce Store</p> -->
-                        </div>
+                        <div class="author-info"><h4>Raj Patel</h4></div>
                     </div>
                 </div>
             </div>
@@ -1052,8 +1179,8 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <button type="submit" class="btn btn-primary">Send Message →</button>
                     </div>
                 </form>
             </div>
@@ -1066,12 +1193,11 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Poojan Oza</h3>
-                    <p>Full Stack Developer specializing in WordPress development and custom solutions.</p>
+                    <p>WordPress Developer, Software Developer & MCP Builder. Specializing in custom WordPress, Figma plugins, and AI-powered developer tools.</p>
                     <div class="social-links">
-                        <!-- Keep only LinkedIn (update href to your profile if desired) -->
-                        <a href="https://www.linkedin.com/in/poojan-oza" class="social-link" aria-label="LinkedIn">in</a>
-                        <!-- Visible email address (full) -->
-                        <a href="mailto:poojanoza35@gmail.com" class="contact-email" aria-label="Email">poojanoza35@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/poojan-oza/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+                        <a href="https://github.com/Poojanoza" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">gh</a>
+                        <a href="mailto:poojanoza89@gmail.com" class="contact-email" aria-label="Email">poojanoza89@gmail.com</a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -1079,7 +1205,8 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1089,30 +1216,27 @@
                         <li><a href="#services">WordPress Development</a></li>
                         <li><a href="#services">Plugin Development</a></li>
                         <li><a href="#services">Figma to WordPress</a></li>
-                        <li><a href="#services">Figma Plugins</a></li>
+                        <li><a href="#services">MCP Server Development</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Poojan Oza. All rights reserved. Built with ❤️</p>
+                <p>&copy; 2026 Poojan Oza. All rights reserved. Built with ❤️ in Ahmedabad.</p>
             </div>
         </div>
     </footer>
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
-        // Mobile Navigation Toggle
         const navToggle = document.getElementById('navToggle');
         const navMenu = document.getElementById('navMenu');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        // Toggle mobile menu
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -1120,7 +1244,6 @@
             });
         });
 
-        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1130,37 +1253,24 @@
             }
         });
 
-        // Smooth scroll offset for fixed navbar
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     const offsetTop = target.offsetTop - 70;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                 }
             });
         });
 
-        // Contact form submission (Netlify-compatible)
-        // Issue: previous handler prevented default submission so Netlify never received data.
-        // Fix: send the form using fetch to Netlify's form endpoint (POST to "/") with
-        // application/x-www-form-urlencoded body (including form-name and honeypot).
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
-            // Build FormData and URL-encoded body
             const formData = new FormData(contactForm);
-
-            // If honeypot filled, abort silently
-            if (formData.get('bot-field')) {
-                // spam detected
-                return;
-            }
+            if (formData.get('bot-field')) return;
 
             const body = new URLSearchParams();
             for (const pair of formData.entries()) {
@@ -1184,16 +1294,14 @@
             })
             .catch(err => {
                 console.error('Form submit error:', err);
-                alert('Sorry — there was an error sending your message. Please try again or email me directly.');
+                alert('Sorry — there was an error sending your message. Please try again or email me directly at poojanoza89@gmail.com.');
             });
         });
 
-        // Add animation on scroll (simple fade-in effect)
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -80px 0px'
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1203,8 +1311,7 @@
             });
         }, observerOptions);
 
-        // Observe elements for animation
-        document.querySelectorAll('.service-card, .testimonial-card, .education-card, .timeline-item').forEach(el => {
+        document.querySelectorAll('.service-card, .testimonial-card, .education-card, .timeline-item, .project-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
